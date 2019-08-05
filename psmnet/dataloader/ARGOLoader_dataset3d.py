@@ -45,8 +45,8 @@ class myImageFloder(data.Dataset):
         dataL = self.dploader(disp_L) # np.float32
 
         
-        #maxpool = torch.nn.MaxPool2d((4,2), stride=0, padding=0, dilation=1, return_indices=False, ceil_mode=False) #(512,1232)
-        maxpool = torch.nn.MaxPool2d((6,8), stride=0, padding=0, dilation=1, return_indices=False, ceil_mode=False) #(342,308)
+        maxpool = torch.nn.MaxPool2d((4,2), stride=0, padding=0, dilation=1, return_indices=False, ceil_mode=False) #(512,1232)
+        #maxpool = torch.nn.MaxPool2d((6,8), stride=0, padding=0, dilation=1, return_indices=False, ceil_mode=False) #(342,308)
         PIL_to_Tensor = torchvision.transforms.ToTensor()
         Tensor_to_PIL = torchvision.transforms.ToPILImage()
 
