@@ -74,7 +74,7 @@ class myImageFloder(data.Dataset):
 
 
         if self.training:
-            '''
+            
             w, h = left_img.size # w = 1232, h = 514
             th, tw = 256, 512
 
@@ -85,7 +85,7 @@ class myImageFloder(data.Dataset):
             right_img = right_img.crop((x1, y1, x1 + tw, y1 + th))
 
             dataL = dataL[y1:y1 + th, x1:x1 + tw]
-            '''
+            
             
             processed = preprocess.get_transform(augment=False)
             left_img = processed(left_img)
