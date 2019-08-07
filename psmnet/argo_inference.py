@@ -142,7 +142,7 @@ def main():
             pred_disp = pred_disp[top_pad:,:-right_pad]
 	    if args.save_figure:
                 skimage.io.imsave(pred_disp_dir + '/pred_disp_img_' + \
-			test_left_img[inx][18:-4],(pred_disp*256).astype('uint16'))
+			test_left_img[inx][18:-3] + 'png',(pred_disp*256).astype('uint16'))
 	    else:
                 np.save(pred_disp_dir + '/pred_disp_' + test_left_img[inx][18:-3], pred_disp)
             #skimage.io.imsave(test_left_img[inx].split('/')[-1],(pred_disp*256).astype('uint16'))
