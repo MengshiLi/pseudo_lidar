@@ -39,7 +39,7 @@ Assume your git folder is $ROOT for the following reference.</p>
 	which python #to obtain &lt;absolute-python-path&gt; for python2
 	virtualenv --python=&lt;absolute-python-path&gt; venv_PSMNet_cuda
 	source ~/venv_PSMNet_cuda/bin/activate
-	pip install torch torchvision scikit-image
+	pip install torch torchvision==0.2.0 scikit-image
 </code></pre>
 <ul>
 <li>Run from GPU node.</li>
