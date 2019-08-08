@@ -4,6 +4,9 @@ import numpy as np
 import argoverse
 from argoverse.data_loading.argoverse_tracking_loader import ArgoverseTrackingLoader
 from argoverse.utils.calibration import Calibration
+from argoverse.visualization.mayavi_utils import draw_lidar, mayavi_compare_point_clouds 
+from argoverse.utils.ply_loader import load_ply
+from argoverse.utils import mayavi_wrapper
 
 baseline = 0.3
 
@@ -28,6 +31,7 @@ if __name__ == '__main__':
                         default='/Users/mengsli/Downloads/DLRepo/argoverse-tracking/')
     parser.add_argument('--sub_folder', type=str, default='sample/') #train1, train2 ... val, test
     parser.add_argument('--max_high', type=int, default=1)
+    parser.add_argument('--viz_lidar', type=bool, default=False)
     args = parser.parse_args()
 
     assert os.path.isdir(args.root_dir)
@@ -59,6 +63,10 @@ if __name__ == '__main__':
             disp = np.load(disparity_dir + '/' + fn) #2056x2464
 
             lidar = project_disp_to_depth(calibL, disp, args.max_high) #nx3   
+        
+            if args.viz_lidar:
+                fig = draw_lidar(lidar)
+                mayavi_wrapper.mlab.show()
 
             # pad 1 in the indensity dimension
             lidar = np.concatenate([lidar, np.ones((lidar.shape[0], 1))], 1) #nx4
