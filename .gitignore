@@ -1,5 +1,7 @@
 psmnet/pretrained_model_KITTI2015.tar
 psmnet/pretrained_sceneflow.tar
+pretrained_sceneflow.tar
+*.swp
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
