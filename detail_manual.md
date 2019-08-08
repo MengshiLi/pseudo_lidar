@@ -47,7 +47,7 @@ Assume your work folder is $ROOT for the following steps.
 - Note that torchvision is designated to 0.2.0 manually, as a higher version will errorneously visualize the disparity map.
 
 ## 5. Generate groundtruth disparity from Lidar 
-- The groundtruth disparity is used to finetuen the PSMNet model. As Argoverse dataset is not providing groundtruth disparity for its stereo images, we will generate them from Lidar.
+- The groundtruth disparity is used to finetune the PSMNet model. As Argoverse dataset is not providing groundtruth disparity for its stereo images, we will generate them from Lidar.
 - Source code for generate disparity: `$ROOT/preprocessing/argo_gen_disp.py`. 
 - Run it from any GPU node. Avoid running any heavy load on the footholder node.
 - Before running the code, ensure Argoverse dataset is already downloaded and organized in the following format.
