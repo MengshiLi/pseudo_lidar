@@ -34,6 +34,9 @@ parser.add_argument('--no_cuda', action='store_true', default=False,
                     help='enables CUDA training')
 parser.add_argument('--seed', type=int, default=1, metavar='S',
                     help='random seed (default: 1)')
+parser.add_argument('--save_figure', action='store_true', 
+		    help='if true, save the png file; default is false, save the numpy file')
+
 args = parser.parse_args()
 
 args.cuda = not args.no_cuda and torch.cuda.is_available()
@@ -137,8 +140,11 @@ def main():
             print('time = %.2f' %(time.time() - start_time))
 
             pred_disp = pred_disp[top_pad:,:-right_pad]
-            np.save(pred_disp_dir + '/pred_disp_' + test_left_img[inx][18:-3], pred_disp)
-            #skimage.io.imsave(test_left_img[inx].split('/')[-1],(pred_disp*256).astype('uint16'))
+	    if args.save_figure:
+                skimage.io.imsave(pred_disp_dir + '/pred_disp_img_' + \
+			test_left_img[inx][18:-3] + 'png',(pred_disp*256).astype('uint16'))
+	    else:
+                np.save(pred_disp_dir + '/pred_disp_' + test_left_img[inx][18:-3], pred_disp)
             #skimage.io.imsave(test_left_img[inx].split('/')[-1],(pred_disp*256).astype('uint16'))
 
 if __name__ == '__main__':
