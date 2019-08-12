@@ -92,8 +92,9 @@ argoverse-tracking/
 ## 7. Inference: predict disparity from stereo image
 Still running from the above virtualenv: 
 ```
-    python $ROOT/psmnet/argo_inference.py --datapath $DATAPATH --sub_folder train4 --loadmodel <finetuned model path>
+    python $ROOT/psmnet/argo_inference.py --datapath $DATAPATH --sub_folder train{x} --loadmodel <finetuned model path> --save_figure
 ```
+Note, `--save_figure` is ture, it will save the output as `.png`. Otherwise, `.npy`. 
 
 ## 8. Generate Pseudo-Lidar from predicted disparity
 
