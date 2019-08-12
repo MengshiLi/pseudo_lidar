@@ -24,9 +24,9 @@ if __name__ == '__main__':
 
     for i in range(4):
         i = i + 1
-        disparity_dir = args.root_dir + 'disparity_demo' + str(i) + '/'
-        stereo_left_dir = args.root_dir + 'stereo_left_demo' + str(i) + '/'
-        stereo_right_dir = args.root_dir + 'stereo_right_demo' + str(i) + '/'
+        disparity_dir = args.root_dir + 'disparity' + str(i) + '/'
+        stereo_left_dir = args.root_dir + 'stereo_left' + str(i) + '/'
+        stereo_right_dir = args.root_dir + 'stereo_right' + str(i) + '/'
         subroot_dir = args.root_dir + 'train' + str(i) + '/'
 
         argoverse_loader = ArgoverseTrackingLoader(subroot_dir)

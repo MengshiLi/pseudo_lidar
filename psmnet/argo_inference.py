@@ -35,7 +35,7 @@ parser.add_argument('--no_cuda', action='store_true', default=False,
 parser.add_argument('--seed', type=int, default=1, metavar='S',
                     help='random seed (default: 1)')
 parser.add_argument('--save_figure', action='store_true', 
-		    help='if true, save the numpy file, not the png file')
+		    help='if true, save the png file; default is false, save the numpy file')
 
 args = parser.parse_args()
 
